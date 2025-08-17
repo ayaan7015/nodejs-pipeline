@@ -1,0 +1,4 @@
+venv
+.venv
+database.db
+todo.json

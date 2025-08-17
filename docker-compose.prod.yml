@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  
+  backend:
+    
+    image: ayaandevops/auth-backend:latest
+    container_name: prod-auth-backend
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+     
+      - ./backend/database.db:/app/database.db
+   
+  frontend:
+  
+    image: ayaandevops/auth-frontend:latest
+    container_name: prod-auth-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
